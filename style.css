@@ -38,7 +38,7 @@ body {
 /*about page===============================================*/
 .about-image {
     position: absolute;
-    top: 35%;
+    top: 35vh;
     left: 10%;
     width: 365px;
     height: 243px;
