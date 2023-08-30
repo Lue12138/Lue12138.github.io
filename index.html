@@ -1,23 +1,93 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-<head>     
-<meta charset="utf-8">     
-<meta name="viewport" content="width=device-width, initial-scale=1"> 
-<link rel="stylesheet" href="style.css">
-</head> 
-<body> 
-    <nav class="nav-bar">
-        <a class="nav-text" href="index.html">Home</a>
-        <a class="nav-text" href="pages/about.html">About</a>
-        <a class="nav-text" href="pages/exp.html">Experience</a>
-        <a class="nav-text" href="pages/projects.html">Projects</a>
-        <a class="nav-text" href="pages/contact.html">Contact</a>
-    </nav>
-    <section id="home">
-        <div class="hero-text">
-            <p class="hero-title">Hi there, I'm Lue</p>
-            <p class="hero-desc">Welcome to my little space made of Vanilla JS :)</p>
-        </div>
-    </section>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xiaohan Lu</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body class="day-theme">
+    <main>
+      <section id="about-me">
+        <div class="about-me-container">
+          <div class="about-me-text-container">
+            <h1>Hi there, I'm Lue!</h1>
+            <p>
+              My name is Xiaohan Lu or known as Lue for short. I'm a Master of Engineering student at the University of Toronto. 
+              Before that I was a Computer Science and Statistics student at UofT Scarborough. 
+            </p>
+            <p>
+              Other than academia, I have previously worked as an Application Engineer at CHASS Data Centre. 
+              I gained experience by actively building projects using various techniques and frameworks. I can't list all things that I'm 
+              familiar with here, but here are several: Python, MERN stack, Java, R, SQL and I'm always learning!
+            </p>
+            <p>
+                Fun fact! I've been programing for
+                <span id="time-container">0</span> seconds!
+            </p>
+            <div class="icons-container">
+              <a class="icons" href="https://www.linkedin.com/in/xiaohan-lu-1585b9212/">
+                <i class="fa fa-linkedin" style="font-size:48px" ></i>
+              </a>
+              <a class="icons" href="https://github.com/Lue12138">
+                <i class="fa fa-github" style="font-size:48px"></i>
+              </a>
+              <a class="icons" href="mailto:shawlue2@gmail.com">
+                <i class="fa fa-envelope" style="font-size:48px"></i>
+              </a>
+              <a class="icons" id="theme-switch-icon">
+                <i class="fa fa-moon-o" style="font-size:48px"></i>
+              </a>
+            </div>
+          </div>
+      </div>
+      <div id="custom-cursor"></div>
+      </section>
+    </main>
+
+    <footer>Made with Vanilla JS and <span class="heart">♥</span> on Earth</footer>
+  </body>
+
+  <script>
+    const timeContainer = document.getElementById("time-container");
+    const BIRTH_DAY = "01-09-2019";
+    const BIRTH_DAY_DATE = new Date(BIRTH_DAY);
+    const intlNumberFormatter = new Intl.NumberFormat("en-US");
+    let isDayTheme = true; // Initial theme is day
+
+    const customCursor = document.getElementById("custom-cursor");
+
+    document.addEventListener("mousemove", (event) => {
+      const mouseX = event.clientX;
+      const mouseY = event.clientY;
+
+      customCursor.style.left = mouseX + "px";
+      customCursor.style.top = mouseY + "px";
+    });
+
+    // Define the theme switch icon and attach the event listener
+    const themeSwitchIcon = document.getElementById("theme-switch-icon");
+    themeSwitchIcon.addEventListener("click", () => {
+      const body = document.body;
+      body.classList.toggle("day-theme");
+      body.classList.toggle("night-theme");
+
+      // Toggle the theme state
+      isDayTheme = !isDayTheme;
+
+      // Update the file icon based on the theme state
+      themeSwitchIcon.innerHTML = `<i class="fa ${isDayTheme ? 'fa-moon-o' : 'fa-sun-o'}" style="font-size:48px"></i>`;
+    });
+
+    // Interval logic for updating time
+    setInterval(() => {
+      const now = new Date();
+      const difference = Math.floor(
+        (now.getTime() - BIRTH_DAY_DATE.getTime()) / 1000
+      );
+
+      timeContainer.innerText = intlNumberFormatter.format(difference);
+    }, 1000);
+  </script>
 </html>
