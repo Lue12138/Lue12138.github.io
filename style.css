@@ -1,27 +1,10 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Proza+Libre:wght@700&display=swap"); */
-
-html {
-  scroll-behavior: smooth;
-}
-
 html,
 body {
   height: 100%;
-  color: var(--font-color);
   cursor: none;
 }
 
-body.day-theme {
-  background-color: #f0f0f0;
-  color: #333;
-}
-
-body.night-theme {
-  background-color: #333;
-  color: #f0f0f0;
-}
-
-/* :root {
+:root {
   --spacing-1: 8px;
   --spacing-2: 12px;
   --spacing-3: 16px;
@@ -29,15 +12,29 @@ body.night-theme {
 
   --border-radius: 12px;
 
-  --font-color: #323232;
-} */
+  --font-color: #333;
+  --bg-color: #f0f0f0;
+}
+
+body.day-theme {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+}
+
+body.night-theme {
+  background-color: var(--font-color);
+  color: var(--bg-color);
+}
+
+.heart {
+  color: red;
+}
 
 body {
   font-family: "Comic Sans MS", sans-serif;
-  font-size:x-large;
   margin: 0;
   padding: 0 var(--spacing-3);
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -45,42 +42,47 @@ body {
 
 .about-me-container {
   display: flex;
+  /* border: 3px solid green; */
+  margin-top: 13vh;
 }
 
 .about-me-text-container {
-  position:absolute;
-  top:50%;
-  left:50%;
-  /* margin-right: var(--spacing-3); */
-  transform: translate(-50%, -50%);
-  /* border: 3px solid #73AD21; */
-  width:65%;
-  height: 80%;
+  font-size: 1.5em;
+  margin-right: var(--spacing-3);
 }
 
 footer {
   margin-top: auto;
   padding: var(--spacing-2) 0;
   text-align: center;
-}
-
-.heart {
-  color: red;
+  /* border: 3px solid red; */
 }
 
 .icons-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* border: 3px solid blue; */
 }
 
 .icons {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
+  color: inherit;
   width: 100px; /* Adjust the width as needed */
   height: 100px; /* Adjust the height as needed */
   margin: 10px; /* Add some spacing */
+  /* cursor: none; */
+}
+
+.icons > i {
+  font-size: 3em;
+}
+
+.icons:hover {
+  color: grey;
 }
 
 #custom-cursor {
@@ -94,16 +96,8 @@ footer {
   z-index: 9999;
 }
 
-.icons {
-  text-decoration: none;
-  color: inherit;
-}
-.icons:hover {
-  color: grey;
-}
-
 @media only screen and (max-width: 600px) {
   .about-me-container {
-    flex-direction: column;
+    margin-top: auto;
   }
 }
