@@ -14,7 +14,7 @@ document.addEventListener("mousemove", (event) => {
     customCursor.style.top = mouseY + "px";
 
     // Change cursor color based on theme
-    const cursorColor = isDayTheme ? "rgba(0, 0, 0, 0.5)" : "white";
+    const cursorColor = isDayTheme ? "rgba(0, 0, 0, 0.5)" : "rgba(224, 225, 225, 0.5)";
     customCursor.style.backgroundColor = cursorColor;
 });
 
@@ -32,7 +32,7 @@ themeSwitchIcon.addEventListener("click", () => {
     themeSwitchIcon.innerHTML = `<i class="fa ${isDayTheme ? 'fa-moon-o' : 'fa-sun-o'}" style="font-size:48px"></i>`;
 
     // Update cursor color based on theme
-    const cursorColor = isDayTheme ? "rgba(0, 0, 0, 0.5)"  : "white";
+    const cursorColor = isDayTheme ? "rgba(0, 0, 0, 0.5)" : "rgba(224, 225, 225, 0.5)";
     customCursor.style.backgroundColor = cursorColor;
 });
 
@@ -45,14 +45,3 @@ setInterval(() => {
 
     timeContainer.innerText = intlNumberFormatter.format(difference);
 }, 1000);
-
-// const iconToShake = document.getElementById("theme-switch-icon");
-
-// function shakeIcon() {
-//   iconToShake.classList.add("shake-animation");
-//   setTimeout(() => {
-//     iconToShake.classList.remove("shake-animation");
-//   }, 500); // Remove the class after 0.5 seconds
-// }
-
-// setInterval(shakeIcon, 5000); // Shake every 5 seconds
