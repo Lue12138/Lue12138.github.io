@@ -95,6 +95,7 @@ footer {
 
 .icons:hover {
   color: grey;
+  transform: scale(1.2);
 }
 
 #custom-cursor {
