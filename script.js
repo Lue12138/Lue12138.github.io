@@ -1,11 +1,11 @@
 const timeContainer = document.getElementById("time-container");
-const BIRTH_DAY = "2019-09-01";
-const BIRTH_DAY_DATE = new Date(BIRTH_DAY);
+const START_DAY = "2019-09-01";
+const START_DAY_DATE = new Date(START_DAY);
 const intlNumberFormatter = new Intl.NumberFormat("en-US");
 let isDayTheme = true; // Initial theme is day
 
+// Define the customized cursor
 const customCursor = document.getElementById("custom-cursor");
-
 document.addEventListener("mousemove", (event) => {
     const mouseX = event.clientX;
     const mouseY = event.clientY;
@@ -40,7 +40,7 @@ themeSwitchIcon.addEventListener("click", () => {
 setInterval(() => {
     const now = new Date();
     const difference = Math.floor(
-    (now.getTime() - BIRTH_DAY_DATE.getTime()) / 1000
+    (now.getTime() - START_DAY_DATE.getTime()) / 1000
     );
 
     timeContainer.innerText = intlNumberFormatter.format(difference);
