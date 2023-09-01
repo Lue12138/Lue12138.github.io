@@ -1,5 +1,5 @@
 const timeContainer = document.getElementById("time-container");
-const BIRTH_DAY = "01-09-2019";
+const BIRTH_DAY = "2019-09-01";
 const BIRTH_DAY_DATE = new Date(BIRTH_DAY);
 const intlNumberFormatter = new Intl.NumberFormat("en-US");
 let isDayTheme = true; // Initial theme is day
