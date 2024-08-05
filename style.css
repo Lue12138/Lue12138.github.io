@@ -15,7 +15,7 @@ body {
   --border-radius: 12px;
 
   --font-color: #333;
-  --bg-color: white;
+  --bg-color: #FFF8DB;
 }
 
 body.day-theme {
